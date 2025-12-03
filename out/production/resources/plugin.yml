@@ -1,0 +1,14 @@
+name: regions
+version: '1.0-SNAPSHOT'
+main: io.github.adrianvic.regions.Regions
+api-version: '1.21'
+author: 'Adrian Victor'
+website: https://github.io/adrianvic
+description: Change what players can do based in custom criteria.
+commands:
+  mrlistpolicies:
+    description: "Lists all loaded policies"
+    usage: "/mrlistpolicies"
+  mrpolicyinfo:
+    description: "Show info about a policy"
+    usage: "/mrpolicyinfo"

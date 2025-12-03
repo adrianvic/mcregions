@@ -1,0 +1,4 @@
+name: regions
+version: '1.0-SNAPSHOT'
+main: io.github.adrianvic.regions.Regions
+api-version: '1.21'

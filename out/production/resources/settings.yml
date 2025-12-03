@@ -1,0 +1,33 @@
+Policies:
+  Location:
+    - name: "spawn-protection"
+      allowlist: false
+      nodes:
+        # example PolicyNode fields — adapt to your actual structure
+        canHit: false
+        canHarvest: false
+        message: "You cannot use tools here."
+      locations:
+        # first group (ArrayList<BoundingBox>)
+        -
+          # region 1 in group 1
+          - corner1: { x: 100, y: 60, z: 100 }
+            corner2: { x: 110, y: 70, z: 110 }
+          # region 2 in group 1
+          - corner1: { x: 120, y: 58, z: 95 }
+            corner2: { x: 125, y: 64, z: 100 }
+        # second group (another ArrayList<BoundingBox>)
+        -
+          - corner1: { x: -50, y: 50, z: -50 }
+            corner2: { x: -40, y: 60, z: -40 }
+
+    - name: "farm-area"
+      allowlist: true
+      nodes:
+        canHit: true
+        canHarvest: true
+        message: "Farming allowed."
+      locations:
+        -
+          - corner1: { x: 200, y: 62, z: 200 }
+            corner2: { x: 220, y: 66, z: 220 }

@@ -1,38 +1,28 @@
 package io.github.adrianvic.regions;
 
+import io.github.adrianvic.regions.policy.PolicyNode;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
-
+import java.util.List;
 
 public class Validator {
-    ArrayList<Material> blacklistedItems = new ArrayList<Material>();
-
-    public Validator() {
-        blacklistedItems.add(Material.COPPER_SWORD);
-        blacklistedItems.add(Material.COPPER_AXE);
-        blacklistedItems.add(Material.COPPER_HOE);
-        blacklistedItems.add(Material.ROTTEN_FLESH);
+    public static boolean canInteract(HumanEntity entity) {
+        return true;
     }
 
-    public boolean isHumanoidAbleToHit(HumanEntity damager) {
-        return isItemValid(damager.getInventory().getItemInMainHand().getType());
+    public static boolean canBreak(HumanEntity entity) {
+        return true;
     }
 
-    public boolean isHumanoidAbleToHarvest(HumanEntity harvester) {
-        return isItemValid(harvester.getInventory().getItemInMainHand().getType());
+    public static boolean canHit(HumanEntity entity) {
+        return true;
     }
 
-    public boolean isItemValid(Material item) {
-        return !blacklistedItems.contains(item);
-    }
-
-    public void warnPlayer(Player player) {
-        Location loc = player.getLocation();
-        loc.getWorld().strikeLightningEffect(loc);
-        player.sendMessage("Please note that you are not allowed to do this here!");
+    public static List<PolicyNode> getPoliciesFor(HumanEntity entity) {
+        return new ArrayList<>();
     }
 }

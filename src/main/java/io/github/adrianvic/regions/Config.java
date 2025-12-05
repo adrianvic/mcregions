@@ -14,8 +14,8 @@ public class Config {
     private YamlConfiguration config;
 
     private List<LocationPolicy> locationPolicies;
-    private List<PermissionPolicy> permissionPolicies;
-    private List<PlayerNamePolicy> playerNamePolicies;
+//    private List<PermissionPolicy> permissionPolicies;
+//    private List<PlayerNamePolicy> playerNamePolicies;
 
     private Config() {
     }
